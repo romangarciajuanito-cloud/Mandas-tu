@@ -85,7 +85,10 @@ function mostrar(id, tiempo) {
 }
 
 function iniciar() {
-    document.getElementById("musica").play();
+    let audio = document.getElementById("musica");
+
+    audio.currentTime = 42; // 🔥 empieza en el segundo 42
+    audio.play();
 
     let delay = 0;
     const intervalo = 1200;
