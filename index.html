@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Para Fátima</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #141e30, #243b55);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+            max-width: 400px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        .visible {
+            opacity: 1;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #ff4d6d;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff1e4d;
+        }
+    </style>
+</head>
+<body>
+
+<audio id="musica" loop>
+    <source src="https://files.catbox.moe/fkd618.m4a" type="audio/mp4">
+</audio>
+
+<div class="card">
+    <h2>❤️ Para Fátima</h2>
+
+    <p id="t1">No es que me tengas, Fátima…</p>
+    <p id="t2">es que contigo me dejo llevar.</p>
+
+    <p id="t3">No es que mandes…</p>
+    <p id="t4">es que me gusta obedecerte.</p>
+
+    <button onclick="iniciar()">Presiona aquí</button>
+
+    <p id="t5">Estoy a tus órdenes, Fátima…</p>
+    <p id="t6">pero no por obligación…</p>
+
+    <p id="t7">sino porque cuando se trata de ti,</p>
+    <p id="t8">me gusta perder el control</p>
+    <p id="t9">y dejar que seas tú quien decida ❤️</p>
+</div>
+
+<script>
+function mostrar(id, tiempo) {
+    setTimeout(() => {
+        document.getElementById(id).classList.add("visible");
+    }, tiempo);
+}
+
+function iniciar() {
+    document.getElementById("musica").play();
+
+    let delay = 0;
+    const intervalo = 1200;
+
+    ["t1","t2","t3","t4","t5","t6","t7","t8","t9"].forEach((id) => {
+        mostrar(id, delay);
+        delay += intervalo;
+    });
+}
+</script>
+
+</body>
+</html>
